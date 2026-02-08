@@ -13,6 +13,7 @@ const Navbar = () => {
       <div className="opt">
         <div>Home</div>
         <div>About</div>
+        <div>Wallet</div>
         <div>Platform</div>
         <div>Features</div>
         <div>FAQ</div>
