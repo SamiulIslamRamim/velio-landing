@@ -4,6 +4,10 @@ import BrandBar from "./components/BrandBar/BrandBar";
 import About from "./components/About";
 import Wallet from "./components/Wallet";
 import Feature from "./components/Feature";
+import Faq from "./components/faq";
+import Testimoni from "./components/Testimoni";
+import Banner from "./components/banner";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -16,8 +20,11 @@ function App() {
       <About />
       <Wallet />
       <Feature />
+      <Faq />
+      <Testimoni />
+      <Banner />
+      <Footer />
 
-      <h1>hello</h1>
     </>
   );
 }
