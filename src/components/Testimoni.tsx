@@ -1,3 +1,4 @@
+import Review from "./Review.tsx"
 const Testimoni = () => {
   return (
     <div className="testi">
@@ -7,7 +8,7 @@ const Testimoni = () => {
         <div className="hear">Hear What Others Said</div>
         <div className="reputation">
 
-          <div className="review">
+          {/* <div className="review">
             <div className="revbox">
               <div className="revtext">Velio cut our checkout time in half and boosted approvals. Integration took a day, not weeks.</div>
               <div className="revpro">
@@ -51,7 +52,9 @@ const Testimoni = () => {
                 <div className="revplat"></div>
               </div>
             </div>
-          </div>
+          </div> */}
+
+            <Review />
 
         </div>
     </div>

@@ -24,4 +24,28 @@ export const REVIEWS: Review[] = [
     name: "ADELINE CHEN",
     platform: "Media app",
   },
+  {
+    id: 4,
+    text: "Velio cut our checkout time in half and boosted approvals. Integration took a day, not weeks.",
+    name: "ADELINE CHEN",
+    platform: "Media app111",
+  },
+  {
+    id: 5,
+    text: "Reconciliation used to be painful. With Velio’s unified ledger, month‑end is a one‑hour task.",
+    name: "ADELINE CHEN",
+    platform: "Media app222",
+  },
+  {
+    id: 6,
+    text: "Subscriptions and dunning are finally on autopilot. Revenue is up, churn is down.",
+    name: "ADELINE CHEN",
+    platform: "Media app333",
+  },
+  {
+    id: 7,
+    text: "Velio cut our checkout time in half and boosted approvals. Integration took a day, not weeks.",
+    name: "ADELINE CHEN",
+    platform: "Media app4444",
+  },
 ];

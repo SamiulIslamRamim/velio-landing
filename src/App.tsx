@@ -8,6 +8,11 @@ import Faq from "./components/Faq";
 import Testimoni from "./components/Testimoni";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
+
+// import 'swiper/css';
+// import 'swiper/css/free-mode';
+// import 'swiper/css/pagination';
+
 function App() {
   return (
     <>
