@@ -4,9 +4,9 @@ import BrandBar from "./components/BrandBar/BrandBar";
 import About from "./components/About";
 import Wallet from "./components/Wallet";
 import Feature from "./components/Feature";
-import Faq from "./components/faq";
+import Faq from "./components/Faq";
 import Testimoni from "./components/Testimoni";
-import Banner from "./components/banner";
+import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 function App() {
   return (
