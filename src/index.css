@@ -1,11 +1,9 @@
 /* width= 1440;
 height= 864; */
 
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 
 * {
   margin: 0;
@@ -182,39 +180,6 @@ height= 864; */
       text-align: center;
     }
   }
-  .s1 {
-    position: absolute;
-    width: 119px;
-    height: 119px;
-    background: red;
-    margin-top: 6.28vh;
-    /* margin-left: 64vh; */
-    /* margin-top: 56.5px;  */
-    margin-left: 770px;
-    margin-right: 421px;
-    /* z-index: 1; */
-  }
-  .s2 {
-    position: absolute;
-    width: 119px;
-    height: 119px;
-    background: red;
-    margin-top: 415px;
-    margin-left: 295px;
-    margin-right: 1138px;
-
-    /* z-index: 1; */
-  }
-  .s3 {
-    position: absolute;
-    width: 119px;
-    height: 119px;
-    background: red;
-    margin-top: 415px;
-    margin-left: 1060px;
-
-    /* z-index: 1; */
-  }
 }
 
 .partner {
@@ -358,9 +323,12 @@ height= 864; */
 }
 
 .wallet {
+  position: relative;
+  overflow: hidden;
+
   margin-top: 100px;
   margin-left: 64px;
-  margin-right: 64px;
+  padding-right: 64px;
   margin-bottom: 40px;
   justify-content: space-evenly;
   display: flex;
@@ -418,6 +386,7 @@ height= 864; */
     height: 795px;
     /* background-color: red; */
     .screen {
+      background-color: #131313;
       display: flex;
       min-width: 374px;
       /* height: 695px; */
@@ -426,6 +395,7 @@ height= 864; */
       border: solid white 5px;
       /* padding-top: 25px;
       padding-bottom: 25px; */
+      z-index: 10;
       .topcon {
         padding: 25px 16px;
         .usnum {
@@ -494,7 +464,7 @@ height= 864; */
               .opt {
                 width: 70px;
                 height: 70px;
-                background-color: aquamarine;
+                background-color: #030303;
                 border-radius: 100px;
                 display: flex;
                 justify-content: center;
@@ -588,9 +558,41 @@ height= 864; */
     }
   }
 }
+.wallet::after {
+  content: "";
+  position: absolute;
+
+  /* Center the glow */
+  top: 60%;
+  left: 70%;
+  transform: translate(-50%, -55%);
+
+  /* Make the glow large enough to cover the center area */
+  width: 70%;
+  height: 100%;
+
+  /* Radial Gradient: 
+     - Center is soft white/gray at 10% opacity
+     - Fades to total transparency at 70% 
+  */
+  background: radial-gradient(
+    circle,
+    #b7cebc38 3%,
+    #a2b4b72c 30%,
+    transparent 75%
+  );
+
+  /* Place it above the grid (z-index 1) but below text (z-index 10) */
+  z-index: 5;
+
+  /* Very important: clicking passes through this layer */
+  pointer-events: none;
+}
 
 .feature {
-  margin: 100px 64px;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 64px;
   .ft {
     display: flex;
     align-items: center;
@@ -624,9 +626,9 @@ height= 864; */
   .featgrid {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2vw;
     justify-content: space-between;
-    flex: 1;
+    /* flex: 1; */
     .grid1 {
       /* background-color: rgb(255, 127, 187);   */
       display: flex;
@@ -635,7 +637,7 @@ height= 864; */
       .fgrid {
         /* background-color: red; */
         width: 424px;
-        height: 650px;
+        /* height: 650px; */
         display: flex;
         flex-direction: column;
         flex-shrink: 0;
@@ -652,6 +654,7 @@ height= 864; */
           flex-direction: column;
           gap: 35px;
           margin-bottom: 50px;
+          /* z-index: 10; */
           .fgridicon {
             width: 62px;
             height: 62px;
@@ -682,6 +685,7 @@ height= 864; */
           }
         }
         .fgriddown {
+          z-index: 10;
           height: 280px;
           padding: 24px;
           background-color: #030303;
@@ -879,9 +883,10 @@ height= 864; */
       align-items: center;
       .sgrid {
         min-width: 424px;
-        height: 650px;
+        /* height: 650px; */
         display: flex;
         flex-direction: column;
+        gap: 2vw;
         flex-shrink: 0;
         border-radius: 32px;
         border: solid transparent 1px;
@@ -935,6 +940,7 @@ height= 864; */
           background-color: #030303;
           border-radius: 24px;
           padding: 16px 24px;
+          z-index: 10;
           .sav {
             display: flex;
             flex-direction: column;
@@ -1020,36 +1026,36 @@ height= 864; */
                 height: 28px;
               }
             }
-            .lsection{
+            .lsection {
               margin-top: 50px;
               display: flex;
               justify-content: center;
               align-items: center;
               gap: 15px;
-              .section{
+              .section {
                 background-color: #131313;
                 display: flex;
                 align-items: center;
                 padding: 25px;
                 border-radius: 25px;
                 gap: 24px;
-                border: solid #AFAFAF 1px;
+                border: solid #afafaf 1px;
                 min-width: 370px;
-                .lock{
+                .lock {
                   width: 75px;
                   height: 75px;
-                  background-color: #ABC0B9;
+                  background-color: #abc0b9;
                   border-radius: 100px;
                   display: flex;
                   justify-content: center;
                   align-items: center;
                 }
-                .ltext{
+                .ltext {
                   display: flex;
                   flex-direction: column;
                   font-size: 18px;
-                  color: #AFAFAF;
-                  .lamount{
+                  color: #afafaf;
+                  .lamount {
                     font-weight: 500;
                     font-style: medium;
                     font-size: 40px;
@@ -1065,41 +1071,72 @@ height= 864; */
     }
   }
 }
+.feature::after {
+  content: "";
+  position: absolute;
 
-.faq{
+  /* Center the glow */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Make the glow large enough to cover the center area */
+  width: 120%;
+  height: 110%;
+
+  /* Radial Gradient: 
+     - Center is soft white/gray at 10% opacity
+     - Fades to total transparency at 70% 
+  */
+  background: radial-gradient(
+    circle,
+    #b7cebc34 3%,
+    #a2b4b736 30%,
+    transparent 60%
+  );
+
+  /* Place it above the grid (z-index 1) but below text (z-index 10) */
+  z-index: 5;
+
+  /* Very important: clicking passes through this layer */
+  pointer-events: none;
+}
+
+.faq {
+  position: relative;
   margin: 100px 64px;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .faqlog{
+  .faqlog {
     border-radius: 32px;
-        border: solid transparent 1px;
-        background-image:
-          linear-gradient(#121212, #292a29),
-          linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        padding: 10px 16px;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 140%;
-        margin-bottom: 24px;
+    border: solid transparent 1px;
+    background-image:
+      linear-gradient(#121212, #292a29),
+      linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    padding: 10px 16px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 24px;
   }
-  .faqask{
+  .faqask {
     font-weight: 500;
     font-style: medium;
     font-size: 64px;
     line-height: 120%;
     margin-bottom: 75px;
   }
-  .qs{
+  .qs {
     display: flex;
     flex-direction: column;
     gap: 20px;
     min-width: 1200px;
-    .ques{
+    .ques {
       border: solid white 1px;
       padding: 32px 50px;
       font-weight: 500;
@@ -1109,158 +1146,262 @@ height= 864; */
       display: flex;
       justify-content: space-between;
     }
-    .ans{
+    #quesd{
+      background: #e6e6e62d;
+      background-blend-mode: overlay;
+    }
+    .ans {
       padding: 2px 50px;
     }
   }
 }
+.faq::after {
+  content: "";
+  position: absolute;
 
-.testi{
+  /* Center the glow */
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Make the glow large enough to cover the center area */
+  width: 90%;
+  height: 90%;
+
+  /* Radial Gradient: 
+     - Center is soft white/gray at 10% opacity
+     - Fades to total transparency at 70% 
+  */
+  background: radial-gradient(
+    circle,
+    #b7cebc63 1%,
+    #a2b4b75b 10%,
+    transparent 85%
+  );
+
+  /* Place it above the grid (z-index 1) but below text (z-index 10) */
+  z-index: 5;
+
+  /* Very important: clicking passes through this layer */
+  pointer-events: none;
+}
+
+.testi {
   margin: 100px 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  .testim{
-        border-radius: 32px;
-        border: solid transparent 1px;
-        background-image:
-          linear-gradient(#121212, #292a29),
-          linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        padding: 10px 16px;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 140%;
-        margin-bottom: 24px;
+  .testim {
+    border-radius: 32px;
+    border: solid transparent 1px;
+    background-image:
+      linear-gradient(#121212, #292a29),
+      linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    padding: 10px 16px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 24px;
   }
-  .hear{
+  .hear {
     font-weight: 500;
     font-style: medium;
     font-size: 64px;
     line-height: 120%;
     margin-bottom: 75px;
   }
-  .reputation{
+  .reputation {
     width: 100%;
     height: 424px;
-    .revbox{
+    .revbox {
       width: 424px;
       height: 424px;
       border-radius: 35px;
       padding: 20px;
-      
+
       border-radius: 32px;
-        border: solid transparent 1px;
-        background-image:
-          linear-gradient(#111111, #070707),
-          linear-gradient(180deg, #e6e6e64d 90%, rgba(233, 233, 233, 0) 93.05%);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
+      border: solid transparent 1px;
+      background-image:
+        linear-gradient(#111111, #070707),
+        linear-gradient(180deg, #e6e6e64d 90%, rgba(233, 233, 233, 0) 93.05%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 38px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 140%;
+      letter-spacing: 0%;
+
+      .revsize {
+        height: 246px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 38px;
-        font-weight: 500;
-          font-size: 24px;
-          line-height: 140%;
-          letter-spacing: 0%;
-          
-        .revsize{
-          height: 246px;
-          display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: first baseline;
         gap: 38px;
-          .revpro{
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            .revplat{
-              font-size: 18px;
-            }
+        .revpro {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          .revplat {
+            font-size: 18px;
           }
         }
+      }
     }
   }
-
 }
 
-.banner{
-  width: 1440px;
-  height: 935px;
-  background-color: aquamarine;
+.banner {
+  width: 100%;
+  height: 595px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 64px;
   gap: 50px;
-  
-  /* background-size: 119px 119px;
-  background-color: #0a0a0a;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.5px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px); */
+  position: relative;
+  overflow: hidden;
 
-    /* display: grid;
-  grid-template-columns: repeat(10, 119px); 
-  grid-template-rows: repeat(10, 119px);
-  background-color: #0a0a0a;
-  z-index: 2; */
+  .grid-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    width: max(100%, 1547px);
+    height: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 119px);
+    grid-template-rows: repeat(auto-fill, 119px);
+    justify-content: start;
+    align-content: start;
+    pointer-events: none;
+  }
 
-  .bantext{
+  .grid-cell {
+    border: 1px solid #444;
+    box-sizing: border-box;
+    width: 119px;
+    height: 119px;
+    background-color: transparent;
+  }
+
+  .grid-cell:nth-child(20) {
+      background-image:
+        linear-gradient(#121212, #292a29),
+        linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    border: 1px solid #444;
+    z-index: 1;
+  }
+
+  .grid-cell:nth-child(42) {
+    background-image:
+        linear-gradient(#121212, #292a29),
+        linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    border: 1px solid #444;
+    z-index: 1;
+  }
+  .grid-cell:nth-child(50) {
+    background-image:
+        linear-gradient(#121212, #292a29),
+        linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    border: 1px solid #444;
+    z-index: 1;
+  }
+
+  .bantext {
+    padding: 0px 64px 0px 64px;
+
     text-align: center;
     font-weight: 500;
     font-style: medium;
     font-size: 48px;
     line-height: 120%;
     letter-spacing: 0%;
-    /* z-index: 10; */
+    z-index: 10;
   }
-  .banbtn{
+  .banbtn {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 16px;
-        z-index: 10;
+    z-index: 10;
 
-    .str{
+    .str {
       border-radius: 32px;
-        border: solid transparent 1px;
-        background-image:
-          linear-gradient(#121212, #292a29),
-          linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        padding: 20px 24px;
-        font-size: 18px;
-        line-height: 140%;
-        
+      border: solid transparent 1px;
+      background-image:
+        linear-gradient(#121212, #292a29),
+        linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      padding: 20px 24px;
+      font-size: 18px;
+      line-height: 140%;
     }
-     .sale{
+    .sale {
       border-radius: 32px;
       background-color: #fff;
       color: #030303;
       padding: 20px 24px;
-        font-size: 18px;
-        line-height: 140%;
+      font-size: 18px;
+      line-height: 140%;
     }
-    
   }
 }
+.banner::after {
+  content: "";
+  position: absolute;
 
-.foot{
+  /* Center the glow */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Make the glow large enough to cover the center area */
+  width: 100%;
+  height: 1005.217px;
+
+  /* Radial Gradient: 
+     - Center is soft white/gray at 10% opacity
+     - Fades to total transparency at 70% 
+  */
+  background: radial-gradient(
+    circle,
+    #b7cebc5d 3%,
+    #a2b4b754 30%,
+    transparent 80%
+  );
+
+  /* Place it above the grid (z-index 1) but below text (z-index 10) */
+  z-index: 5;
+
+  /* Very important: clicking passes through this layer */
+  pointer-events: none;
+}
+
+.foot {
   margin: 100px 64px;
   display: flex;
   flex-direction: column;
   gap: 75px;
-  .foot1{
+  .foot1 {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    .veli{
+    .veli {
       display: flex;
       gap: 24px;
       align-items: center;
@@ -1276,27 +1417,27 @@ height= 864; */
         letter-spacing: 0%;
       }
     }
-    .veltext{
+    .veltext {
       font-weight: 500;
       font-size: 32px;
       line-height: 140%;
     }
-    .images{
+    .images {
       display: flex;
       gap: 32px;
     }
   }
-  .foot2{
+  .foot2 {
     display: flex;
     justify-content: space-between;
     font-size: 24px;
     font-weight: 500;
-    color: #AFAFAF;
-    .f2t{
+    color: #afafaf;
+    .f2t {
       color: #fff;
     }
   }
-  .copy{
+  .copy {
     font-size: 24px;
     font-weight: 500;
     line-height: 140%;
@@ -1304,50 +1445,116 @@ height= 864; */
   }
 }
 
-
-
 .swiper {
   width: 100%;
   height: 100%;
   /* background-color: pink; */
 }
-
 .swiper-slide {
   /* text-align: center; */
   /* font-size: 18px; */
-  background: #1313131A;
+  background: #1313131a;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-.mySwiper{
+.mySwiper {
   height: 424px;
 }
 
+.firstc {
+  width: 1440;
+  position: relative;
+  overflow: hidden;
 
+  .grid-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: max(100%, 1547px);
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 119px);
+    grid-template-rows: repeat(auto-fill, 119px);
+    justify-content: center;
+    pointer-events: none;
+    z-index: -1;
+    -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
 
+  .grid-cell {
+    border: 1px solid #444;
+    box-sizing: border-box;
+    width: 119px;
+    height: 119px;
+    background-color: transparent;
+    z-index: -1;
+  }
 
+  .grid-cell:nth-child(34) {
+    background-image:
+        linear-gradient(#121212, #292a29),
+        linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    border: 1px solid #444;
+    z-index: -1;
+  }
 
-
-
-
-
-.grid-container {
-  width: 100%;
-  height: 100%;
-
-  background-size: 119px 119px;
-
-  background-color: #0a0a0a;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.5px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
+  .grid-cell:nth-child(55) {
+    background-image:
+        linear-gradient(#121212, #292a29),
+        linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    border: 1px solid #444;
+    z-index: -1;
+  }
+  .grid-cell:nth-child(63) {
+    background-image:
+        linear-gradient(#121212, #292a29),
+        linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    border: 1px solid #444;
+    z-index: -1;
+  }
 }
+.firstc::after {
+  content: "";
+  position: absolute;
+
+  /* Center the glow */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Make the glow large enough to cover the center area */
+  width: 100%; 
+  height: 100%;
+  
+  /* Radial Gradient: 
+     - Center is soft white/gray at 10% opacity
+     - Fades to total transparency at 70% 
+  */
+  background: radial-gradient(
+    circle, 
+    #b7cebc31 10%, 
+    #a2b4b721 50%, 
+    transparent 80%
+  );
+  
+  /* Place it above the grid (z-index 1) but below text (z-index 10) */
+  z-index: 2; 
+  
+  /* Very important: clicking passes through this layer */
+  pointer-events: none; 
+}
+
