@@ -39,12 +39,13 @@ height= 864; */
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
+  z-index: 10;
   .veli {
     display: flex;
     justify-content: space-between;
     gap: 24px;
     align-items: center;
+    z-index: 10;
 
     .logo {
       width: 40px;
@@ -91,6 +92,7 @@ height= 864; */
     align-items: center;
     width: 195px;
     height: 53px;
+    z-index: 10;
 
     .bttext {
       color: var(--velio-bg-dark);
@@ -645,7 +647,7 @@ height= 864; */
         border: solid transparent 1px;
         background-image:
           linear-gradient(#121212, #292a29),
-          linear-gradient(180deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
+          linear-gradient(60deg, #e6e6e6 30%, rgba(233, 233, 233, 0) 93.05%);
         background-origin: border-box;
         background-clip: padding-box, border-box;
         padding: 25px 25px 50px 25px;
@@ -1136,8 +1138,11 @@ height= 864; */
     flex-direction: column;
     gap: 20px;
     min-width: 1200px;
+    
     .ques {
-      border: solid white 1px;
+      /* border: solid white 1px; */
+      background-color: #141414;
+      border-radius: 8px;
       padding: 32px 50px;
       font-weight: 500;
       font-style: medium;
@@ -1160,7 +1165,7 @@ height= 864; */
   position: absolute;
 
   /* Center the glow */
-  top: 55%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -1174,8 +1179,8 @@ height= 864; */
   */
   background: radial-gradient(
     circle,
-    #b7cebc63 1%,
-    #a2b4b75b 10%,
+    #b7cebc53 1%,
+    #a2b4b74b 10%,
     transparent 85%
   );
 
@@ -1184,6 +1189,8 @@ height= 864; */
 
   /* Very important: clicking passes through this layer */
   pointer-events: none;
+-webkit-mask-image: radial-gradient(circle, black 20%, transparent 80%);
+  mask-image: radial-gradient(circle, black 20%, transparent 80%);
 }
 
 .testi {
@@ -1472,6 +1479,7 @@ height= 864; */
   width: 1440;
   position: relative;
   overflow: hidden;
+  padding-bottom: 50px;
 
   .grid-background {
     position: absolute;
@@ -1485,8 +1493,8 @@ height= 864; */
     justify-content: center;
     pointer-events: none;
     z-index: -1;
-    -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
   }
 
   .grid-cell {
@@ -1526,6 +1534,55 @@ height= 864; */
     border: 1px solid #444;
     z-index: -1;
   }
+  .corner{
+position: absolute;
+  /* Position it slightly off-screen to get only the 'curve' of the light */
+  top: -250px;
+  left: -250px;
+  
+  /* Make it large so the curve is very smooth */
+  width: 600px;
+  height: 600px;
+  
+  /* The color: use a soft gray-white with very low opacity */
+  background: radial-gradient(
+    ellipse at center, 
+    #cedbd169 20%, 
+    #bfd3d68c 70%, 
+    transparent 70%
+  );
+  
+  /* This creates the 'misty' look from your picture */
+  filter: blur(80px);
+  
+  z-index: -1;
+  pointer-events: none;
+}
+  .cornert{
+position: absolute;
+  /* Position it slightly off-screen to get only the 'curve' of the light */
+  top: -250px;
+  left: 1050px;
+  
+  /* Make it large so the curve is very smooth */
+  width: 600px;
+  height: 600px;
+  
+  /* The color: use a soft gray-white with very low opacity */
+  background: radial-gradient(
+    ellipse at center, 
+    #cedbd165 20%, 
+    #bfd3d68c 70%, 
+    transparent 70%
+  );
+  
+  /* This creates the 'misty' look from your picture */
+  filter: blur(80px);
+  
+  z-index: 2;
+  pointer-events: none;
+}
+
 }
 .firstc::after {
   content: "";
@@ -1546,7 +1603,7 @@ height= 864; */
   */
   background: radial-gradient(
     circle, 
-    #b7cebc31 10%, 
+    #b7cebc31 20%, 
     #a2b4b721 50%, 
     transparent 80%
   );
@@ -1556,5 +1613,7 @@ height= 864; */
   
   /* Very important: clicking passes through this layer */
   pointer-events: none; 
+  -webkit-mask-image: radial-gradient(circle, black 20%, transparent 80%);
+  mask-image: radial-gradient(circle, black 20%, transparent 80%);
 }
 

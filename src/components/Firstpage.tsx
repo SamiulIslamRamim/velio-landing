@@ -6,6 +6,8 @@ const Firstpage = () => {
       const cells = Array.from({ length: 90 });
   return (
     <div className="firstc">
+      <div className="corner"></div>
+      <div className="cornert"></div>
       <div className="grid-background">
         {cells.map((_, index) => (
           <div key={index} className="grid-cell"></div>
